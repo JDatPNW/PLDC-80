@@ -1,5 +1,10 @@
-# PLDC-80
-PLDC-80 Dataset methodology repository. This repository contains all the materials required to download and build the PLDC-80 dataset for plant leaf disease classification benchmarking 
+# PLDC-80: A Combined Augmented Hybrid Plant Leaf Disease Classification Benchmarking Dataset
+
+![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](./banner.png)
+
+
+
+> PLDC-80 Dataset methodology repository. This repository contains all the materials required to download and build the PLDC-80 dataset for plant leaf disease classification benchmarking. In this Readme file you can find a detailed step by step guide on how to create said PLDC-80 dataset with files that automate most of the process, with only few steps such as downloading, copying the right files into the right location and naming the folders accordingly to allows the code to function. To allow the code provided to work the steps need to be followec closely, since the code requires the specific names and directories to be used. If any of the steps fail or if you prefer to create the dataset, you can also do each step manually, by following the steps provided in the paper, the guide below, and by looking at the provided code.
 
 ## 1. Dataset list with Download links
 
@@ -493,6 +498,17 @@ The `./data` folder should now contain no more images, and can be deleted
 - finally, the last step is to cutoff the dataset at 3,500 image per class for perfect balancing. To to this simply run the `cutoff.py` file.
 - Now the final result should look like:
 
+---
+
+> <ins>**This has now created the final dataset file in the `PLDC80` folder.** </ins>
+> 
+> <ins>**All other folders are not part of the dataset and can be disregarded/deleted.** </ins>
+> 
+> <ins>**Use the data contained in `PLDC80` for training/benchmarking.**</ins>
+
+---
+
+
 <details>
 <summary>Final Structure</summary>
 
@@ -708,6 +724,15 @@ test_ds = tf.keras.preprocessing.image_dataset_from_directory(
 )
 ```
 
+after which the output should look like this:
+```
+Found 280000 files belonging to 80 classes.
+Using 224000 files for training.
+Found 280000 files belonging to 80 classes.
+Using 56000 files for validation.
+Found 24507 files belonging to 80 classes.
+```
+
 ## 8. Summary/Recap/Quick Instruction
 
 1. Download all the datasets and prepare them as instructed above
@@ -723,6 +748,16 @@ If you use this dataset please cite:
    ```ini
    placeholder for bibtex    
    ```
+
+### Python prerequisites
+This code was tested with these version. Other versions might work too but were not tested.
+
+| package       | version                               |
+|---------------|---------------------------------------|
+| python        | 3.11.5                                |
+| opencv-python | 4.8.1.78                              |
+| numpy         | 1.26.2                                |
+| pandas        | 2.2.2                                 |
 
 ### Image rights
 Not all datasets included in PLDC-80 permit redistribution. Therefore, we only share the methods for creating PLDC-80 from the sub-datasets without distributing any images. All image rights remain with their original owners.
