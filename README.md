@@ -1,6 +1,6 @@
 # PLDC-80: A Combined Augmented Hybrid Plant Leaf Disease Classification Benchmarking Dataset
 
-![Banner.](./banner.png)
+![Banner.](/banner.png)
 
 
 
