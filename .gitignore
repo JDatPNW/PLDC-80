@@ -178,3 +178,4 @@ cython_debug/
 *.PNG
 *.jpg
 *.JPG
+!banner.png
