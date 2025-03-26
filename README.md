@@ -1,6 +1,6 @@
 # PLDC-80: A Combined Augmented Hybrid Plant Leaf Disease Classification Benchmarking Dataset
 
-![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](./banner.png)
+![Banner.](./banner.png)
 
 
 
