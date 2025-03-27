@@ -570,7 +570,7 @@ data
         │
         └─── paddy_rice_tungro
         │
-        └─── pdd271_Ginger_anthracnose_234
+        └─── Soybean_downy_mildew_135
         │
         └─── pdd271_Mung_bean_brown_spot_246
         │
