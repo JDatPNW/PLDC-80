@@ -338,7 +338,7 @@ data
 
 
 ### sugar
-1. [Go to Dataset webpage](https://www.kaggle.com/competitions/paddy-disease-classification)
+1. [Go to Dataset webpage](https://data.mendeley.com/datasets/9twjtv92vk/1)
 2. download the data `Download All 745MB`
 3. extract zip
 4. navigate into the extracted folder and then `./Sugarcane Leaf Image Dataset/`
