@@ -358,7 +358,7 @@ data
 
 ```properties
 data
-└────paddy
+└────sugar
         │
         └─── Banded Chlorosis
         │
