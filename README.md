@@ -4,7 +4,7 @@
 
 
 
-> PLDC-80 Dataset methodology repository. This repository contains all the materials required to download and build the PLDC-80 dataset for plant leaf disease classification benchmarking. In this Readme file you can find a detailed step by step guide on how to create said PLDC-80 dataset with files that automate most of the process, with only few steps such as downloading, copying the right files into the right location and naming the folders accordingly to allows the code to function. To allow the code provided to work the steps need to be followec closely, since the code requires the specific names and directories to be used. If any of the steps fail or if you prefer to create the dataset, you can also do each step manually, by following the steps provided in the paper, the guide below, and by looking at the provided code.
+> This repository contains all the materials required to download and build the PLDC-80 dataset for plant leaf disease classification benchmarking. PLDC-80 is a large scale plant leaf disease classification dataset for the trainig and benchmarking of deep learning models that combined 25 different plants. It is the combination of 9 open datasets, resulting in 80 classes and over 300,000 images after augmentation. The resulting dataset is also a hybrid condition dataset, offering various different training points for DL models. In this Readme file you can find a detailed step by step guide on how to create said PLDC-80 dataset with files that automate most of the process, with only few steps such as downloading, copying the right files into the right location and naming the folders accordingly to allows the code to function. To allow the code provided to work the steps need to be followec closely, since the code requires the specific names and directories to be used. If any of the steps fail or if you prefer to create the dataset, you can also do each step manually, by following the steps provided in the paper, the guide below, and by looking at the provided code.
 
 ## 1. Dataset list with Download links
 
@@ -570,7 +570,7 @@ data
         │
         └─── paddy_rice_tungro
         │
-        └─── Soybean_downy_mildew_135
+        └─── pdd271_Soybean_downy_mildew_135
         │
         └─── pdd271_Mung_bean_brown_spot_246
         │
@@ -885,3 +885,91 @@ We encourage the citation of all sub-datasets when using PLDC-80. All references
     doi={10.1016/j.dib.2024.110268}
     }
     ```
+
+## PLDC-6 for Transfer-Learning Testing
+When using PLDC-80 to train a new model, one might want to test its transfer-learning capabilities. To do that a second dataset is required that does not overlap with the dataset used for original training (no direct image overlap). Ideally, all classes (all plant-disease combinations) are also largely without overlap, to make sure that the training actually requires transfer-knowledge. For this we share PLDC-6, a second, much smaller dataset for transfer-learning tests. It contains 2 more datasets that are combined, but not modified. 
+
+
+
+### 1. PLDC-6 Dataset list with Download links
+
+| Dataset      | Link |
+|--------------|------|
+| Bean        |[iBean](https://github.com/AI-Lab-Makerere/ibean)|
+| Soybean     |[Soybean](https://doi.org/10.17632/bycbh73438.1) |
+
+### PLDC-6 Independance
+
+| Plant in PLDC-6      | Appearance in PLDC-80 |
+|----------------------|-----------------------|
+| Bean                 | Not present           |
+| Soybean              | Limited Appearance    |
+
+| Plant-Disease in PLDC-6  | Appearance in PLDC-80 |
+|--------------------------|-------------|
+| Bean - Angular Leaf Spot | Not present |
+| Bean - Bean Rust         | Not present |
+| Bean - Healthy           | Not present |
+| Soybean - Caterpillar    | Not present |
+| Soybean - Diabrotica speciosa    | Not present |
+| Soybean - Healthy (field conditions)   | Present (but lab conditions) |
+
+
+### 2. Citations for PLDC-6 Datasets
+
+
+1. iBean
+```ini
+@ONLINE{makerere2020beansdata,
+    author="Makerere AI Lab",
+    title="Bean disease dataset",
+    month="January",
+    year="2020",
+    url="https://github.com/AI-Lab-Makerere/ibean/"
+}
+
+```
+
+2. Soybean
+```ini
+@article{mignoni2022soybean,
+  title={Soybean images dataset for caterpillar and Diabrotica speciosa pest detection and classification},
+  author={Mignoni, Maria Eloisa and Honorato, Aislan and Kunst, Rafael and Righi, Rodrigo and Massuquetti, Angélica,
+  journal={Data in Brief},
+  volume={40},
+  pages={107756},
+  year={2022},
+  publisher={Elsevier},
+  doi={10.1016/j.dib.2021.107756}
+}
+```
+
+### 3. Preparing the datasets
+This is much simpler that PLDC-80, since no classes need to be deleted, combined, augmented, or cutoff. Simply download both datasets from the links above, combine the train/test/val folders of iBean into a single folder (so that you have control over the splits) and then move the class folders of both datasets into a single `PLDC6` folder.
+
+
+<details>
+<summary>Expected PLDC-6 results</summary>
+
+- 6 classes
+- 7,706 images in total
+- Structure:
+
+```properties
+data
+└────paddy
+        │
+        └─── bean_angular_leaf_spot
+        │
+        └─── bean_bean_rust
+        │
+        └─── bean_healthy
+        │
+        └─── soybean_Caterpillar
+        │
+        └─── soybean_Biabrotica speciosa
+        │
+        └─── soybean_Healthy
+```
+
+</details>
