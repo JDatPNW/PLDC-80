@@ -889,6 +889,8 @@ We encourage the citation of all sub-datasets when using PLDC-80. All references
 ## PLDC-6 for Transfer-Learning Testing
 When using PLDC-80 to train a new model, one might want to test its transfer-learning capabilities. To do that a second dataset is required that does not overlap with the dataset used for original training (no direct image overlap). Ideally, all classes (all plant-disease combinations) are also largely without overlap, to make sure that the training actually requires transfer-knowledge. For this we share PLDC-6, a second, much smaller dataset for transfer-learning tests. It contains 2 more datasets that are combined, but not modified. 
 
+PLDC-6 is purposefully not augmented or balanced, to simulate the type of dataset one would obtain when simply collecting data in field. To further drive home that point, one can only use a small percentage of the dataset for training (say 10%) and the rest for testing, to further simulate that idea and the fact that data is often sparse in this field. 
+
 
 
 ### 1. PLDC-6 Dataset list with Download links
