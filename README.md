@@ -959,7 +959,7 @@ This is much simpler that PLDC-80, since no classes need to be deleted, combined
 
 ```properties
 data
-└────paddy
+└────PLDC6
         │
         └─── bean_angular_leaf_spot
         │
