@@ -746,8 +746,16 @@ Found 24507 files belonging to 80 classes.
 If you use this dataset please cite:
 
    ```ini
-   placeholder for bibtex    
-   ```
+        @inproceedings{richter2025pldc,
+        title={PLDC-80: A Combined Augmented Hybrid Plant Leaf Disease Classification Benchmarking Dataset},
+        author={Richter, David J and Kim, Kyungbaek},
+        booktitle={Annual Conference of KIPS},
+        pages={687--690},
+        year={2025},
+        organization={Korea Information Processing Society},
+        doi={10.3745/PKIPS.y2025m05a.687}
+        }   
+```
 
 ### Python prerequisites
 This code was tested with these version. Other versions might work too but were not tested.
